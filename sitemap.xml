@@ -67,7 +67,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2021-02-25</lastmod>
+    <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,7 +75,7 @@
   
   <url>
     <loc>http://example.com/tags/archlinux/</loc>
-    <lastmod>2021-02-25</lastmod>
+    <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -84,7 +84,7 @@
   
   <url>
     <loc>http://example.com/categories/linux/</loc>
-    <lastmod>2021-02-25</lastmod>
+    <lastmod>2021-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
