@@ -401,14 +401,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-01
+                    2021-03-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    781
+                    796
                 </div>
                 
 
@@ -437,7 +437,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="U盘搭建移动linux工作站"><a href="#U盘搭建移动linux工作站" class="headerlink" title="U盘搭建移动linux工作站"></a>U盘搭建移动linux工作站</h1><p>Archlinux安装在U盘中，pc/laptop通过U盘启动，进入archlinux实现移动办公，不需要数据同步。</p>
+                <h1 id="U盘搭建移动linux工作站"><a href="#U盘搭建移动linux工作站" class="headerlink" title="U盘搭建移动linux工作站"></a>U盘搭建移动linux工作站</h1><p>Archlinux安装在U盘中，pc/laptop通过U盘启动，进入archlinux实现移动办公，不需要数据同步。本文用于参考移动工作站使能。</p>
 <ol>
 <li>通过虚拟机光驱加载iso启动，进入live环境</li>
 <li>U盘挂载到主机，在虚拟机内部进行读写</li>
@@ -464,10 +464,9 @@
 
 <h3 id="VirtualBox-Extension安装"><a href="#VirtualBox-Extension安装" class="headerlink" title="VirtualBox + Extension安装"></a>VirtualBox + Extension安装</h3><h4 id="VirtualBox安装"><a href="#VirtualBox安装" class="headerlink" title="VirtualBox安装"></a>VirtualBox安装</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dnf <span class="token function">install</span> -y VirtualBox-6.1.18-1.fc33.x86_64<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>or</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 这里fedora32版本不影响。</span>
-<span class="token function">wget</span> -c https://download.virtualbox.org/virtualbox/6.1.18/VirtualBox-6.1-6.1.18_142142_fedora32-1.x86_64.rpm
-<span class="token function">rpm</span> -ivh VirtualBox-6.1-6.1.18_142142_fedora32-1.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -c https://download.virtualbox.org/virtualbox/6.1.18/VirtualBox-6.1-6.1.18_142142_fedora32-1.x86_64.rpm
+<span class="token function">rpm</span> -ivh VirtualBox-6.1-6.1.18_142142_fedora32-1.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这里fedora32版本不影响。</p>
 <h4 id="Extension安装"><a href="#Extension安装" class="headerlink" title="Extension安装"></a>Extension安装</h4><p>文件管理器双击或VirtualBox导入即可安装。</p>
 <h2 id="启动live环境"><a href="#启动live环境" class="headerlink" title="启动live环境"></a>启动live环境</h2><h3 id="创建U盘虚拟盘文件"><a href="#创建U盘虚拟盘文件" class="headerlink" title="创建U盘虚拟盘文件"></a>创建U盘虚拟盘文件</h3><p>插入U盘，系统识别并自动挂载设备</p>
 <pre class="line-numbers language-none"><code class="language-none"># lsblk 
@@ -492,11 +491,10 @@ sdc           8:32   1   231G  0 disk
 
 <h3 id="硬盘分区并格式化"><a href="#硬盘分区并格式化" class="headerlink" title="硬盘分区并格式化"></a>硬盘分区并格式化</h3><p>可以在主机上执行，也可以在虚拟机中执行。根据提示设置，创建根分区及交换分区。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">fdisk</span> /dev/sdc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">fdisk</span> /dev/sdc
-<span class="token comment"># p回显</span>
-<span class="token comment">#设备       启动      起点      末尾      扇区  大小 Id 类型</span>
-<span class="token comment">#/dev/sdc1            2048 467666943 467664896  223G 83 Linux</span>
-<span class="token comment">#/dev/sdc2       467666944 484519679  16852736    8G 82 Linux swap / Solaris</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">p命令回显
+设备       启动      起点      末尾      扇区  大小 Id 类型
+/dev/sdc1            2048 467666943 467664896  223G 83 Linux
+/dev/sdc2       467666944 484519679  16852736    8G 82 Linux swap / Solaris<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mkfs.ext4 /dev/sdc1
 <span class="token function">mkswap</span> /dev/sdc2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -525,16 +523,13 @@ EOF</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 
 <h3 id="root-密码"><a href="#root-密码" class="headerlink" title="root 密码"></a>root 密码</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">passwd</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="安装引导程序-待更新"><a href="#安装引导程序-待更新" class="headerlink" title="安装引导程序(待更新)"></a>安装引导程序(待更新)</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pacman -S grub efibootmgr
-pacman -S os-prober
-grub-install --efi-directory<span class="token operator">=</span>/boot/efi --bootloader-id<span class="token operator">=</span>Archlinux
-<span class="token function">grub-mkconfig</span> -o /boot/grub/grub.cfg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
+<h3 id="安装引导程序"><a href="#安装引导程序" class="headerlink" title="安装引导程序"></a>安装引导程序</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">grub-install --target<span class="token operator">=</span>i386-pc /dev/sda<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这里注意我没有创建efi分区，并且grub是直接安装在硬盘的，不是sda1/sda2。</p>
 <h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">exit</span>
 <span class="token function">umount</span> -R /mnt
 <span class="token function">shutdown</span> -h now<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>移除虚拟机光驱，设置硬盘第一启动顺位，启动虚拟机，使用root登入。</p>
-<h3 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h3><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">archlinux安装指导</a></li>
 </ul>
 
@@ -1306,7 +1301,7 @@ grub-install --efi-directory<span class="token operator">=</span>/boot/efi --boo
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">854</span>&nbsp;字
+                class="white-color">869</span>&nbsp;字
             
 
             
