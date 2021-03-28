@@ -6,7 +6,7 @@
   <link href="https://arobot123.github.io/atom.xml" rel="self"/>
   
   <link href="https://arobot123.github.io/"/>
-  <updated>2021-03-06T12:43:39.108Z</updated>
+  <updated>2021-03-28T09:14:10.264Z</updated>
   <id>https://arobot123.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux Commands</title>
+    <link href="https://arobot123.github.io/posts/1c8267d6.html"/>
+    <id>https://arobot123.github.io/posts/1c8267d6.html</id>
+    <published>2021-03-06T14:18:00.000Z</published>
+    <updated>2021-03-28T09:14:10.264Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Linux-Commands&quot;&gt;&lt;a href=&quot;#Linux-Commands&quot; class=&quot;headerlink&quot; title=&quot;Linux Commands&quot;&gt;&lt;/a&gt;Linux Commands&lt;/h1&gt;&lt;p&gt;本文参考 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="linux-tools" scheme="https://arobot123.github.io/categories/linux-tools/"/>
+    
+    
+    <category term="linux-tools" scheme="https://arobot123.github.io/tags/linux-tools/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ArchLinux to Go</title>
     <link href="https://arobot123.github.io/posts/5e40c067.html"/>
     <id>https://arobot123.github.io/posts/5e40c067.html</id>
     <published>2021-02-25T09:01:08.000Z</published>
-    <updated>2021-03-06T12:43:39.108Z</updated>
+    <updated>2021-03-28T09:13:18.357Z</updated>
     
     
       

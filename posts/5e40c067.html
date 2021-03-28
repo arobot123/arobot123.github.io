@@ -401,14 +401,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-06
+                    2021-03-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    796
+                    820
                 </div>
                 
 
@@ -463,16 +463,19 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -c http://mirrors.163.com/archlinux/iso/2021.02.01/archlinux-2021.02.01-x86_64.iso<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="VirtualBox-Extension安装"><a href="#VirtualBox-Extension安装" class="headerlink" title="VirtualBox + Extension安装"></a>VirtualBox + Extension安装</h3><h4 id="VirtualBox安装"><a href="#VirtualBox安装" class="headerlink" title="VirtualBox安装"></a>VirtualBox安装</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dnf <span class="token function">install</span> -y VirtualBox-6.1.18-1.fc33.x86_64<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>or</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -c https://download.virtualbox.org/virtualbox/6.1.18/VirtualBox-6.1-6.1.18_142142_fedora32-1.x86_64.rpm
 <span class="token function">rpm</span> -ivh VirtualBox-6.1-6.1.18_142142_fedora32-1.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>这里fedora32版本不影响。</p>
 <h4 id="Extension安装"><a href="#Extension安装" class="headerlink" title="Extension安装"></a>Extension安装</h4><p>文件管理器双击或VirtualBox导入即可安装。</p>
 <h2 id="启动live环境"><a href="#启动live环境" class="headerlink" title="启动live环境"></a>启动live环境</h2><h3 id="创建U盘虚拟盘文件"><a href="#创建U盘虚拟盘文件" class="headerlink" title="创建U盘虚拟盘文件"></a>创建U盘虚拟盘文件</h3><p>插入U盘，系统识别并自动挂载设备</p>
-<pre class="line-numbers language-none"><code class="language-none"># lsblk 
+<pre class="line-numbers language-text" data-language="text"><code class="language-text"># lsblk 
 NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sdc           8:32   1   231G  0 disk 
 └─sdc1        8:33   1   231G  0 part /run/media/angusrobot/KINGSTON<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>创建U盘虚拟盘文件usb.vmdk到当前路径</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vboxmanage internalcommands createrawvmdk -filename usb.vmdk -rawdisk /dev/sdc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -491,10 +494,12 @@ sdc           8:32   1   231G  0 disk
 
 <h3 id="硬盘分区并格式化"><a href="#硬盘分区并格式化" class="headerlink" title="硬盘分区并格式化"></a>硬盘分区并格式化</h3><p>可以在主机上执行，也可以在虚拟机中执行。根据提示设置，创建根分区及交换分区。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">fdisk</span> /dev/sdc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <pre class="line-numbers language-none"><code class="language-none">p命令回显
 设备       启动      起点      末尾      扇区  大小 Id 类型
 /dev/sdc1            2048 467666943 467664896  223G 83 Linux
 /dev/sdc2       467666944 484519679  16852736    8G 82 Linux swap / Solaris<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mkfs.ext4 /dev/sdc1
 <span class="token function">mkswap</span> /dev/sdc2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -519,15 +524,22 @@ hwclock --systohc<span aria-hidden="true" class="line-numbers-rows"><span></span
 127.0.0.1   localhost
 ::1         localhost
 127.0.1.1	archlinux.localdomain   archlinux
-EOF</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+EOF</span>
+pacman -S dhclient<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="root-密码"><a href="#root-密码" class="headerlink" title="root 密码"></a>root 密码</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">passwd</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h3 id="创建普通用户"><a href="#创建普通用户" class="headerlink" title="创建普通用户"></a>创建普通用户</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">useradd</span> -m angusrobot
+password angusrobot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>交互输入设置用户密码</p>
 <h3 id="安装引导程序"><a href="#安装引导程序" class="headerlink" title="安装引导程序"></a>安装引导程序</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">grub-install --target<span class="token operator">=</span>i386-pc /dev/sda<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>这里注意我没有创建efi分区，并且grub是直接安装在硬盘的，不是sda1/sda2。</p>
 <h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">exit</span>
 <span class="token function">umount</span> -R /mnt
 <span class="token function">shutdown</span> -h now<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p>移除虚拟机光驱，设置硬盘第一启动顺位，启动虚拟机，使用root登入。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">archlinux安装指导</a></li>
@@ -1035,18 +1047,17 @@ EOF</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/5e40c067.html">
+                <a href="/posts/1c8267d6.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/arobot123/arobot123.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="ArchLinux to Go">
+                        <img src="https://cdn.jsdelivr.net/gh/arobot123/arobot123.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="Linux Commands">
                         
-                        <span class="card-title">ArchLinux to Go</span>
+                        <span class="card-title">Linux Commands</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1056,27 +1067,26 @@ EOF</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span>
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-25
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-06
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/linux/" class="post-category">
-                                    linux
+                            <a href="/categories/linux-tools/" class="post-category">
+                                    linux-tools
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/archlinux/">
-                        <span class="chip bg-color">archlinux</span>
+                    <a href="/tags/linux-tools/">
+                        <span class="chip bg-color">linux-tools</span>
                     </a>
                     
                 </div>
@@ -1301,7 +1311,7 @@ EOF</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">869</span>&nbsp;字
+                class="white-color">1.1k</span>&nbsp;字
             
 
             
