@@ -6,7 +6,7 @@
   <link href="https://arobot123.github.io/atom.xml" rel="self"/>
   
   <link href="https://arobot123.github.io/"/>
-  <updated>2021-04-15T03:53:31.966Z</updated>
+  <updated>2021-04-20T05:25:16.789Z</updated>
   <id>https://arobot123.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>my-laptop-configuration</title>
+    <link href="https://arobot123.github.io/posts/6b3a5a22.html"/>
+    <id>https://arobot123.github.io/posts/6b3a5a22.html</id>
+    <published>2021-04-20T05:12:20.000Z</published>
+    <updated>2021-04-20T05:25:16.789Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这篇文章仅记录我的个人工作环境配置，仅供参考。&lt;/p&gt;
+&lt;h2 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>cannot-open-X-display</title>
+    <link href="https://arobot123.github.io/posts/8ab53597.html"/>
+    <id>https://arobot123.github.io/posts/8ab53597.html</id>
+    <published>2021-04-20T05:08:39.000Z</published>
+    <updated>2021-04-20T05:49:33.751Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;背景：普通用户下能打开图片，切换到root后报错cannot open X display&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-text&quot; data-language=&quot;text&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="linux-tools" scheme="https://arobot123.github.io/categories/linux-tools/"/>
+    
+    
+    <category term="x-display" scheme="https://arobot123.github.io/tags/x-display/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
