@@ -6,7 +6,7 @@
   <link href="https://arobot123.github.io/atom.xml" rel="self"/>
   
   <link href="https://arobot123.github.io/"/>
-  <updated>2021-04-21T08:53:49.250Z</updated>
+  <updated>2021-04-21T09:24:02.293Z</updated>
   <id>https://arobot123.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速搭建Qemu虚拟机(二)</title>
+    <link href="https://arobot123.github.io/posts/ae504e32.html"/>
+    <id>https://arobot123.github.io/posts/ae504e32.html</id>
+    <published>2021-04-21T08:57:14.000Z</published>
+    <updated>2021-04-21T09:24:02.293Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;下面将以ubuntu说明怎么创建一个qemu-kvm，或者一系列qemu-kvm。&lt;/p&gt;
+&lt;h2 id=&quot;准备素材&quot;&gt;&lt;a href=&quot;#准备素材&quot; class=&quot;headerlink&quot; title=&quot;准备素材&quot;&gt;&lt;/a&gt;准备素材&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="https://arobot123.github.io/categories/linux/"/>
+    
+    <category term="IDE" scheme="https://arobot123.github.io/categories/linux/IDE/"/>
+    
+    
+    <category term="qemu-kvm" scheme="https://arobot123.github.io/tags/qemu-kvm/"/>
+    
+  </entry>
   
   <entry>
     <title>快速搭建Qemu虚拟机(一)</title>

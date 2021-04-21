@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>快速搭建Qemu虚拟机(二)</title>
+      <link href="posts/ae504e32.html"/>
+      <url>posts/ae504e32.html</url>
+      
+        <content type="html"><![CDATA[<p>下面将以ubuntu说明怎么创建一个qemu-kvm，或者一系列qemu-kvm。</p><h2 id="准备素材"><a href="#准备素材" class="headerlink" title="准备素材"></a>准备素材</h2><h3 id="安装镜像"><a href="#安装镜像" class="headerlink" title="安装镜像"></a>安装镜像</h3><p>进入<a href="https://launchpad.net/ubuntu/+cdmirrors">ubuntu官网镜像站</a>，选择自己的镜像站点，<br>比如 China -&gt; HUAWEI Cloud 将会使用华为云镜像站下载，比如 ubuntu20.04.2桌面版iso镜像<br><a href="https://mirrors.huaweicloud.com/repository/ubuntu-releases/20.04.2/ubuntu-20.04.2.0-desktop-amd64.iso">ubuntu-20.04.2.0-desktop-amd64.iso</a>。<br>下载到本地。<br><strong>注意不同镜像站网速可能不一样。</strong></p><p>建议将虚拟机统一目录管理，预留较大的磁盘分区或空间给虚拟机使用。</p><h3 id="虚拟硬盘"><a href="#虚拟硬盘" class="headerlink" title="虚拟硬盘"></a>虚拟硬盘</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">qemu-img create -f qcow2 ubuntu-20.04.2.0.img 100G<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>这里 qcow2 是一种格式的虚拟磁盘，大小限制在100G以内，存储时按实际大小占用空间。</p><h3 id="虚拟机运行脚本"><a href="#虚拟机运行脚本" class="headerlink" title="虚拟机运行脚本"></a>虚拟机运行脚本</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">#!/bin/shcmds=(    qemu-kvm    -machine type=pc,accel=kvm,vmport=on,dump-guest-core=on    -smp 4    -boot order=cdn,menu=on,reboot-timeout=5000    -m size=4G    -name ubuntu.20.04.2.0    -uuid 37444335-3031-3636-5a48-483630314435    -hda /var/share/qemu-kvm/ubuntu-20.04.2.0.img    -cdrom /var/share/qemu-kvm/ubuntu-20.04.2.0-desktop-amd64.iso    -display gtk    -vga virtio    -full-screen    -serial stdio)"${cmds[@]}"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>脚本可以命名 kvm-ubuntu， 增加执行权限<code>chmod u+x kvm-ubuntu</code>，放到搜索路径下即可在用户全局调用。<br>如 $HOME/bin/kvm-ubuntu，即 $HOME/bin/ 在环境变量PATH中。可以使用<code>printenv PATH</code>查看。</p><p>执行<code>kvm-ubuntu</code>即可启动虚拟机，和真机装机使用基本一致。</p><h2 id="脚本说明"><a href="#脚本说明" class="headerlink" title="脚本说明"></a>脚本说明</h2><pre class="line-numbers language-text" data-language="text"><code class="language-text">-boot 指定启动配置，如启动顺序。-cdrom 指定安装镜像-hda 指定虚拟硬盘<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>完成系统安装后，在行前用<code>#</code>将<code>-cdrom</code>参数注释，或者调整启动顺序。</p><hr><p>详细查看qemu-kvm命令帮助。</p><h2 id="装机重启"><a href="#装机重启" class="headerlink" title="装机重启"></a>装机重启</h2><p>虚拟机启动后，按自己配置，进行系统安装。安装完成后，先关机，然后从硬盘启动，即可进入装机环境。</p><p>部分内容，可以在网上找到很多相关资源参考。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+          <category> IDE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> qemu-kvm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>快速搭建Qemu虚拟机(一)</title>
       <link href="posts/161d550.html"/>
       <url>posts/161d550.html</url>
