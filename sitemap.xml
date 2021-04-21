@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://arobot123.github.io/posts/161d550.html</loc>
+    
+    <lastmod>2021-04-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://arobot123.github.io/posts/6b3a5a22.html</loc>
     
     <lastmod>2021-04-21</lastmod>
@@ -136,6 +143,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://arobot123.github.io/tags/qemu-kvm/</loc>
+    <lastmod>2021-04-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -147,6 +161,13 @@
   
   <url>
     <loc>https://arobot123.github.io/categories/IDE/</loc>
+    <lastmod>2021-04-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://arobot123.github.io/categories/linux/IDE/</loc>
     <lastmod>2021-04-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
