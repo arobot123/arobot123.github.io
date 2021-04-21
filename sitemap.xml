@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://arobot123.github.io/posts/6b3a5a22.html</loc>
+    
+    <lastmod>2021-04-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://arobot123.github.io/posts/d68a2357.html</loc>
     
     <lastmod>2021-04-21</lastmod>
@@ -9,16 +16,23 @@
   </url>
   
   <url>
-    <loc>https://arobot123.github.io/posts/6b3a5a22.html</loc>
+    <loc>https://arobot123.github.io/posts/8ab53597.html</loc>
     
-    <lastmod>2021-04-20</lastmod>
+    <lastmod>2021-04-21</lastmod>
     
   </url>
   
   <url>
-    <loc>https://arobot123.github.io/posts/8ab53597.html</loc>
+    <loc>https://arobot123.github.io/posts/5e40c067.html</loc>
     
-    <lastmod>2021-04-20</lastmod>
+    <lastmod>2021-04-21</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://arobot123.github.io/posts/1c8267d6.html</loc>
+    
+    <lastmod>2021-04-21</lastmod>
     
   </url>
   
@@ -26,20 +40,6 @@
     <loc>https://arobot123.github.io/posts/4a17b156.html</loc>
     
     <lastmod>2021-04-15</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://arobot123.github.io/posts/1c8267d6.html</loc>
-    
-    <lastmod>2021-04-15</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://arobot123.github.io/posts/5e40c067.html</loc>
-    
-    <lastmod>2021-03-28</lastmod>
     
   </url>
   
@@ -116,7 +116,21 @@
   </url>
   
   <url>
+    <loc>https://arobot123.github.io/tags/image-bed/</loc>
+    <lastmod>2021-04-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://arobot123.github.io/tags/linux-tools/</loc>
+    <lastmod>2021-04-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://arobot123.github.io/tags/personal-computer/</loc>
     <lastmod>2021-04-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -132,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://arobot123.github.io/categories/linux-tools/</loc>
+    <loc>https://arobot123.github.io/categories/IDE/</loc>
     <lastmod>2021-04-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -6,7 +6,7 @@
   <link href="https://arobot123.github.io/atom.xml" rel="self"/>
   
   <link href="https://arobot123.github.io/"/>
-  <updated>2021-04-21T02:40:10.969Z</updated>
+  <updated>2021-04-21T08:09:41.202Z</updated>
   <id>https://arobot123.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://arobot123.github.io/posts/d68a2357.html"/>
     <id>https://arobot123.github.io/posts/d68a2357.html</id>
     <published>2021-04-21T01:44:48.000Z</published>
-    <updated>2021-04-21T02:40:10.969Z</updated>
+    <updated>2021-04-21T08:09:41.202Z</updated>
     
     
       
@@ -35,6 +35,10 @@
     
     
     
+    <category term="IDE" scheme="https://arobot123.github.io/categories/IDE/"/>
+    
+    
+    <category term="image-bed" scheme="https://arobot123.github.io/tags/image-bed/"/>
     
   </entry>
   
@@ -43,7 +47,7 @@
     <link href="https://arobot123.github.io/posts/6b3a5a22.html"/>
     <id>https://arobot123.github.io/posts/6b3a5a22.html</id>
     <published>2021-04-20T05:12:20.000Z</published>
-    <updated>2021-04-20T05:50:17.881Z</updated>
+    <updated>2021-04-21T08:10:19.123Z</updated>
     
     
       
@@ -57,6 +61,10 @@
     
     
     
+    <category term="IDE" scheme="https://arobot123.github.io/categories/IDE/"/>
+    
+    
+    <category term="personal-computer" scheme="https://arobot123.github.io/tags/personal-computer/"/>
     
   </entry>
   
@@ -65,7 +73,7 @@
     <link href="https://arobot123.github.io/posts/8ab53597.html"/>
     <id>https://arobot123.github.io/posts/8ab53597.html</id>
     <published>2021-04-20T05:08:39.000Z</published>
-    <updated>2021-04-20T05:50:17.880Z</updated>
+    <updated>2021-04-21T08:09:04.547Z</updated>
     
     
       
@@ -79,7 +87,7 @@
     
     
     
-    <category term="linux-tools" scheme="https://arobot123.github.io/categories/linux-tools/"/>
+    <category term="linux" scheme="https://arobot123.github.io/categories/linux/"/>
     
     
     <category term="x-display" scheme="https://arobot123.github.io/tags/x-display/"/>
@@ -112,7 +120,7 @@
     <link href="https://arobot123.github.io/posts/1c8267d6.html"/>
     <id>https://arobot123.github.io/posts/1c8267d6.html</id>
     <published>2021-03-06T14:18:00.000Z</published>
-    <updated>2021-04-15T03:52:36.533Z</updated>
+    <updated>2021-04-21T08:08:18.226Z</updated>
     
     
       
@@ -125,7 +133,7 @@
     
     
     
-    <category term="linux-tools" scheme="https://arobot123.github.io/categories/linux-tools/"/>
+    <category term="linux" scheme="https://arobot123.github.io/categories/linux/"/>
     
     
     <category term="linux-tools" scheme="https://arobot123.github.io/tags/linux-tools/"/>
@@ -137,7 +145,7 @@
     <link href="https://arobot123.github.io/posts/5e40c067.html"/>
     <id>https://arobot123.github.io/posts/5e40c067.html</id>
     <published>2021-02-25T09:01:08.000Z</published>
-    <updated>2021-03-28T09:13:18.357Z</updated>
+    <updated>2021-04-21T08:08:40.668Z</updated>
     
     
       
