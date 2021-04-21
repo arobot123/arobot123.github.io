@@ -6,7 +6,7 @@
   <link href="https://arobot123.github.io/atom.xml" rel="self"/>
   
   <link href="https://arobot123.github.io/"/>
-  <updated>2021-04-21T08:09:41.202Z</updated>
+  <updated>2021-04-21T08:24:30.988Z</updated>
   <id>https://arobot123.github.io/</id>
   
   <author>
@@ -17,19 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>create-self-imageBed</title>
+    <title>如何搭建自己的图床</title>
     <link href="https://arobot123.github.io/posts/d68a2357.html"/>
     <id>https://arobot123.github.io/posts/d68a2357.html</id>
     <published>2021-04-21T01:44:48.000Z</published>
-    <updated>2021-04-21T08:09:41.202Z</updated>
+    <updated>2021-04-21T08:24:30.988Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;如何搭建自己的图床&quot;&gt;&lt;a href=&quot;#如何搭建自己的图床&quot; class=&quot;headerlink&quot; title=&quot;如何搭建自己的图床&quot;&gt;&lt;/a&gt;如何搭建自己的图床&lt;/h2&gt;&lt;p&gt;图床，写文时需要用到。搭建自己的私人图床，不用付费，自己维护。&lt;/p&gt;
-&lt;h3</summary>
+    <summary type="html">&lt;p&gt;写文时需要用到图床。本文讲述如何搭建自己的私人图床，不用付费，自己维护。&lt;/p&gt;
+&lt;h2 id=&quot;选型&quot;&gt;&lt;a href=&quot;#选型&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -43,18 +43,18 @@
   </entry>
   
   <entry>
-    <title>my-laptop-configuration</title>
+    <title>个人工作环境配置</title>
     <link href="https://arobot123.github.io/posts/6b3a5a22.html"/>
     <id>https://arobot123.github.io/posts/6b3a5a22.html</id>
     <published>2021-04-20T05:12:20.000Z</published>
-    <updated>2021-04-21T08:10:19.123Z</updated>
+    <updated>2021-04-21T08:25:20.035Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;这篇文章仅记录我的个人工作环境配置，仅供参考。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;这篇文章仅记录我的个人工作环境配置，读者可以参考。&lt;/p&gt;
 &lt;h2 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot;</summary>
         
       
@@ -73,7 +73,7 @@
     <link href="https://arobot123.github.io/posts/8ab53597.html"/>
     <id>https://arobot123.github.io/posts/8ab53597.html</id>
     <published>2021-04-20T05:08:39.000Z</published>
-    <updated>2021-04-21T08:09:04.547Z</updated>
+    <updated>2021-04-21T08:23:30.486Z</updated>
     
     
       
@@ -141,18 +141,21 @@
   </entry>
   
   <entry>
-    <title>ArchLinux to Go</title>
+    <title>U盘搭建移动linux工作站</title>
     <link href="https://arobot123.github.io/posts/5e40c067.html"/>
     <id>https://arobot123.github.io/posts/5e40c067.html</id>
     <published>2021-02-25T09:01:08.000Z</published>
-    <updated>2021-04-21T08:08:40.668Z</updated>
+    <updated>2021-04-21T08:23:22.557Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;U盘搭建移动linux工作站&quot;&gt;&lt;a href=&quot;#U盘搭建移动linux工作站&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;p&gt;Archlinux安装在U盘中，pc/laptop通过U盘启动，进入archlinux实现移动办公，不需要数据同步。本文用于参考移动工作站使能。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;通过虚拟机光驱加载iso启动，进入live环境&lt;/li&gt;
+&lt;li&gt;U盘挂载到主机，在虚拟机内部进行读写</summary>
         
       
     
