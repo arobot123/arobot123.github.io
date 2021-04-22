@@ -405,14 +405,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-21
+                    2021-04-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    489
+                    524
                 </div>
                 
 
@@ -458,22 +458,27 @@ cmds=(
     -name ubuntu.20.04.2.0
     -uuid 37444335-3031-3636-5a48-483630314435
     -hda /var/share/qemu-kvm/ubuntu-20.04.2.0.img
-    -cdrom /var/share/qemu-kvm/ubuntu-20.04.2.0-desktop-amd64.iso
-    -display gtk
+    #-cdrom /var/share/qemu-kvm/ubuntu-20.04.2.0-desktop-amd64.iso
+    -display gtk,show-cursor=on
     -vga virtio
     -full-screen
-    -serial stdio
+    -rtc base=localtime
+    -sdl
 )
 
-"${cmds[@]}"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+"${cmds[@]}"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>脚本可以命名 kvm-ubuntu， 增加执行权限<code>chmod u+x kvm-ubuntu</code>，放到搜索路径下即可在用户全局调用。<br>如 $HOME/bin/kvm-ubuntu，即 $HOME/bin/ 在环境变量PATH中。可以使用<code>printenv PATH</code>查看。</p>
 <p>执行<code>kvm-ubuntu</code>即可启动虚拟机，和真机装机使用基本一致。</p>
 <h2 id="脚本说明"><a href="#脚本说明" class="headerlink" title="脚本说明"></a>脚本说明</h2><pre class="line-numbers language-text" data-language="text"><code class="language-text">-boot 指定启动配置，如启动顺序。
 -cdrom 指定安装镜像
--hda 指定虚拟硬盘<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+-hda 指定虚拟硬盘
+-sdl 支持快捷键ctrl-c这些<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>完成系统安装后，在行前用<code>#</code>将<code>-cdrom</code>参数注释，或者调整启动顺序。</p>
+<p>*qemu默认快捷键: *</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">ctrl+alt f 全屏切换
+ctrl+alt g 鼠标捕获<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <hr>
 <p>详细查看qemu-kvm命令帮助。</p>
 <h2 id="装机重启"><a href="#装机重启" class="headerlink" title="装机重启"></a>装机重启</h2><p>虚拟机启动后，按自己配置，进行系统安装。安装完成后，先关机，然后从硬盘启动，即可进入装机环境。</p>
@@ -1262,7 +1267,7 @@ cmds=(
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.4k</span>&nbsp;字
+                class="white-color">4.5k</span>&nbsp;字
             
 
             
