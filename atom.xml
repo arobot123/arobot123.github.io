@@ -6,7 +6,7 @@
   <link href="https://arobot123.github.io/atom.xml" rel="self"/>
   
   <link href="https://arobot123.github.io/"/>
-  <updated>2021-04-22T01:28:26.615Z</updated>
+  <updated>2021-04-22T01:51:30.608Z</updated>
   <id>https://arobot123.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>小工具采集器</title>
+    <link href="https://arobot123.github.io/posts/573d126a.html"/>
+    <id>https://arobot123.github.io/posts/573d126a.html</id>
+    <published>2021-04-22T01:33:10.000Z</published>
+    <updated>2021-04-22T01:51:30.608Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;本地HttpServer&quot;&gt;&lt;a href=&quot;#本地HttpServer&quot; class=&quot;headerlink&quot; title=&quot;本地HttpServer&quot;&gt;&lt;/a&gt;本地HttpServer&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="tools" scheme="https://arobot123.github.io/categories/tools/"/>
+    
+    
+    <category term="small-tools" scheme="https://arobot123.github.io/tags/small-tools/"/>
+    
+  </entry>
+  
+  <entry>
     <title>小bug清理机</title>
     <link href="https://arobot123.github.io/posts/e03e6612.html"/>
     <id>https://arobot123.github.io/posts/e03e6612.html</id>
     <published>2021-04-22T01:23:50.000Z</published>
-    <updated>2021-04-22T01:28:26.615Z</updated>
+    <updated>2021-04-22T01:32:35.935Z</updated>
     
     
       
@@ -34,6 +59,10 @@
     
     
     
+    <category term="IDE" scheme="https://arobot123.github.io/categories/IDE/"/>
+    
+    
+    <category term="bug-fix" scheme="https://arobot123.github.io/tags/bug-fix/"/>
     
   </entry>
   

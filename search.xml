@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>小工具采集器</title>
+      <link href="posts/573d126a.html"/>
+      <url>posts/573d126a.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="本地HttpServer"><a href="#本地HttpServer" class="headerlink" title="本地HttpServer"></a>本地HttpServer</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">python3 -m http.serverpython2 -m SimpleHTTPServer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="Windows计算文件md5sum"><a href="#Windows计算文件md5sum" class="headerlink" title="Windows计算文件md5sum"></a>Windows计算文件md5sum</h2><pre class="line-numbers language-bat" data-language="bat"><code class="language-bat">certutil -hashfile [filename]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="Windows开机启动脚本"><a href="#Windows开机启动脚本" class="headerlink" title="Windows开机启动脚本"></a>Windows开机启动脚本</h2><pre class="line-numbers language-text" data-language="text"><code class="language-text">C:\Users\&lt;username&gt;\AppData\Roaming\Microsoft\Windows\StartMenu\Programs\Startup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> small-tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>小bug清理机</title>
       <link href="posts/e03e6612.html"/>
       <url>posts/e03e6612.html</url>
@@ -11,6 +36,18 @@
         <content type="html"><![CDATA[<h2 id="sudo-dnf-update-报错：-Zchunk-error-Unable-to-find-multipart-download-range"><a href="#sudo-dnf-update-报错：-Zchunk-error-Unable-to-find-multipart-download-range" class="headerlink" title="sudo dnf update 报错： Zchunk error: Unable to find multipart download range"></a>sudo dnf update 报错： Zchunk error: Unable to find multipart download range</h2><pre class="line-numbers language-text" data-language="text"><code class="language-text">% sudo dnf update -yFedora 33 - x86_64 - Updates                                                                             15 kB/s |  18 kB     00:01    Fedora 33 - x86_64 - Updates                                                                            291 kB/s | 655 kB     00:02    Errors during downloading metadata for repository 'updates':  - Curl error (52): Server returned nothing (no headers, no data) for http://mirror.sjtu.edu.cn/fedora/linux/updates/33/Everything/x86_64/repodata/91f0b8484161b556ee67d9fa6512cd0f4f2bae6e173aa353e6cc69a782a50b0b-primary.xml.zck [Empty reply from server]  - Curl error (52): Server returned nothing (no headers, no data) for http://mirror.sjtu.edu.cn/fedora/linux/updates/33/Everything/x86_64/repodata/a3f0c8c48033b015034080a03ecbe1797e6a2630f0921499449f6e4367f11a7b-filelists.xml.zck [Empty reply from server]  - Zchunk error: Unable to find multipart download range错误：Failed to download metadata for repo 'updates': Yum repo downloading error: Downloading error: Unable to initialize zchunk file repodata/91f0b8484161b556ee67d9fa6512cd0f4f2bae6e173aa353e6cc69a782a50b0b-primary.xml.zck: Unable to set zchunk file descriptor for repodata/91f0b8484161b556ee67d9fa6512cd0f4f2bae6e173aa353e6cc69a782a50b0b-primary.xml.zck: Unable to find multipart download range<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>处理：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">Temporary solution:1. Set zchunk to False in dnf.conf~]# echo 'zchunk=False' &gt;&gt; /etc/dnf/dnf.conf2. Restart packagekit~]# systemctl restart packagekit.service3. Run again "pkcon refresh force"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> IDE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bug-fix </tag>
+            
+        </tags>
       
     </entry>
     
