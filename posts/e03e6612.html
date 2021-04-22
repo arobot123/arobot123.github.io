@@ -408,14 +408,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    193
+                    443
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -454,6 +454,31 @@ Errors during downloading metadata for repository 'updates':
 2. Restart packagekit
 ~]# systemctl restart packagekit.service
 3. Run again "pkcon refresh force"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="手误删除login-shell如何恢复"><a href="#手误删除login-shell如何恢复" class="headerlink" title="手误删除login shell如何恢复"></a>手误删除login shell如何恢复</h2><p>/etc/passwd 指定为zsh，但zsh被删除后没有chsh，退出后无法登录报permission denied</p>
+<p>处理：</p>
+<p>方案1：修改启动参数</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">1. 开机进入grub选单，按e进入编辑
+
+    linux /vmlinuz root=/dev/mapper/vg_centos-lv-root ro nomodoset quiet
+crashkernel=auto rd.lvm.lv=vg_centos/lv_root console=ttyS0,115200n8 LANG=en_US.UTF-8
+    initrd /initramfs
+
+2. 找到linux开头这行 ro quiet console=xxx 并删除
+3. 这行后加入 rw init=/bin/bash
+4. 按ctrl+x启动系统
+5. 启动后进入bash且根目录已经正常挂载，使用passwd修改root密码，chsh修改默认shell
+6. 执行 exec /sbin/init 进入正常启动流程<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>方案2：挂载iso启动</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">1. 下载ubuntu iso镜像（可启动iso镜像即可），挂载并从iso启动
+2. 试用系统，非安装系统，确认进入
+3. 进入后挂载/etc/passwd对应分区
+4. 修改配置保存
+5. 从硬盘重启<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>方案3：Live USB启动</p>
+<p>类似iso启动，进入USB系统操作。</p>
 
                 
             </div>
@@ -1237,7 +1262,7 @@ Errors during downloading metadata for repository 'updates':
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.5k</span>&nbsp;字
+                class="white-color">4.7k</span>&nbsp;字
             
 
             
