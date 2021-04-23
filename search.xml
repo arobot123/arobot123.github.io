@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>linux网络安全配置</title>
+      <link href="posts/2da5073.html"/>
+      <url>posts/2da5073.html</url>
+      
+        <content type="html"><![CDATA[<p>linux服务器或pc在网络稳定可靠运行，无疑是重中之重。本文记录linux安全配置。</p><h2 id="SSH安全登录"><a href="#SSH安全登录" class="headerlink" title="SSH安全登录"></a>SSH安全登录</h2><ol><li>直接关闭root用户ssh登录，使用普通用户登入后切换到root</li></ol><pre class="line-numbers language-text" data-language="text"><code class="language-text">/etc/ssh/sshd_config修改配置: PermitRootLogin no<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>更进一步 su/sudo 使用也应该正确限制。</p><ol start="2"><li>不关闭root登录，通过ssh-keypair认证，免密登录</li></ol><pre class="line-numbers language-text" data-language="text"><code class="language-text">/root/.ssh/authorized_keys增加一行配置，如： ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFCDTwzlh8IZuFqudlbtbZRRgmYYLkvO/+0FRXDmY3h6QlqBps1LR5Ydg3GDbt3gpkrzdtdKJNa3VZ+S7+h9+AWu8hpElxxxL5aDE/949T5v2VSUjq2cxxxr82DK8nSdd02MDHsgdxxxhqGmhDhTGmeIfLRI2yEhcdxxxgQu3+GjBischecpJAa7JQjdMmmj+Mq2wMcGPxxx++jlb5Fyrr0kFAIYWN+G+Yp3FdNFbvJjbfwHxxxBBHGWKQ8rP+wiCa8LpXdxwVQAp3w3XWoPEFzJ/FDdIxxxpbU8c42OkdIlAn/obyIkogg+Yv+7qEywaYCmXGGEzOZ2M2Kjs9HhAg0+yxxxGRpONX1nfWsvmgbNMvU4UM47i/dOavGZOpuhRoPvs6pXSyuluGhxxxF0pyyx49BTA+3Bzq0QHlDw0GHMDA0aZe10xxxtTCGD5KHce3sy5uSpZxSyA/xCQqd2vFJxxxrSzJwrmkMaJYC31RrXMxzGzUatsbxFpdFLhAOAM= angus_robot@163.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>生成自己的本地公私钥对后，待登录机器添加的当然是公钥，私钥自己保管好。</p><p>将文件权限修改为root:root 600。</p><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">chown root:root /root/.ssh/authorized_keyschmod 600 /root/.ssh/authorized_keys<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>同时禁止ssh密码登录</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">/etc/ssh/sshd_config修改配置:PermitRootLogin yesPasswordAuthentication no<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>将证书认证改为仅用：/root/.ssh/authorized_keys<br>/etc/ssh/sshd_config<br>修改配置：AuthorizedKeysFile .ssh/authorized_keys</p><ol start="3"><li>对于PC，如果没有必要直接禁止ssh服务</li></ol><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl stop sshdsystemctl disable sshd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="限制SSH失败重试次数"><a href="#限制SSH失败重试次数" class="headerlink" title="限制SSH失败重试次数"></a>限制SSH失败重试次数</h2><pre class="line-numbers language-text" data-language="text"><code class="language-text">/etc/ssh/sshd_config修改配置：MaxAuthTries 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="禁止SSH客户端记住密码"><a href="#禁止SSH客户端记住密码" class="headerlink" title="禁止SSH客户端记住密码"></a>禁止SSH客户端记住密码</h2><pre class="line-numbers language-text" data-language="text"><code class="language-text">/etc/ssh/sshd_config修改配置: ChallengeResponseAuthentication yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>这个配置和免密冲突，使用免密时配置成no。</p><p>参考：<a href="https://zhuanlan.zhihu.com/p/94236787">https://zhuanlan.zhihu.com/p/94236787</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> security </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>小工具采集器</title>
       <link href="posts/573d126a.html"/>
       <url>posts/573d126a.html</url>
