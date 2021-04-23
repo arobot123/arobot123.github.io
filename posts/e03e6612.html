@@ -408,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    462
+                    564
                 </div>
                 
 
@@ -480,6 +480,16 @@ crashkernel=auto rd.lvm.lv=vg_centos/lv_root console=ttyS0,115200n8 LANG=en_US.U
 <p>方案3：Live USB启动</p>
 <p>类似iso启动，进入USB系统操作。</p>
 <h2 id="df-run-user-1000-doc-不允许的操作"><a href="#df-run-user-1000-doc-不允许的操作" class="headerlink" title="df: /run/user/1000/doc: 不允许的操作"></a>df: /run/user/1000/doc: 不允许的操作</h2><p><a target="_blank" rel="noopener" href="https://bugzilla.redhat.com/show_bug.cgi?id=1913358#">https://bugzilla.redhat.com/show_bug.cgi?id=1913358#</a></p>
+<h2 id="git-push-出现-Empty-reply-from-server"><a href="#git-push-出现-Empty-reply-from-server" class="headerlink" title="git push 出现 Empty reply from server"></a>git push 出现 Empty reply from server</h2><pre class="line-numbers language-text" data-language="text"><code class="language-text">% git push
+fatal: 无法访问 'https://github.com/arobot123/zilean/'：Empty reply from server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>墙内墙外http,https通道不仅速度慢，也都有失败风险的。访问不到就返回空了。通道换成git</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">vim .git/config
+将 url 从http/https 替换成git
+具体链接可以从仓库复制过来，我这里是
+url = https://github.com/arobot123/zilean
+=&gt;
+url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1263,7 +1273,7 @@ crashkernel=auto rd.lvm.lv=vg_centos/lv_root console=ttyS0,115200n8 LANG=en_US.U
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.7k</span>&nbsp;字
+                class="white-color">4.9k</span>&nbsp;字
             
 
             
