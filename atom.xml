@@ -6,7 +6,7 @@
   <link href="https://arobot123.github.io/atom.xml" rel="self"/>
   
   <link href="https://arobot123.github.io/"/>
-  <updated>2021-04-23T06:25:42.639Z</updated>
+  <updated>2021-04-24T09:20:55.346Z</updated>
   <id>https://arobot123.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>linux-boot-theme</title>
+    <link href="https://arobot123.github.io/posts/6406bd98.html"/>
+    <id>https://arobot123.github.io/posts/6406bd98.html</id>
+    <published>2021-04-24T03:09:47.000Z</published>
+    <updated>2021-04-24T09:20:55.346Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;pc启动的时候搞了个grub2-theme，发现有时候能显示，有时候又不行，决定看看是啥原因。&lt;/p&gt;
+&lt;h2 id=&quot;启动方式&quot;&gt;&lt;a href=&quot;#启动方式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="https://arobot123.github.io/categories/linux/"/>
+    
+    
+    <category term="boot" scheme="https://arobot123.github.io/tags/boot/"/>
+    
+    <category term="theme" scheme="https://arobot123.github.io/tags/theme/"/>
+    
+  </entry>
+  
+  <entry>
     <title>linux网络安全配置</title>
     <link href="https://arobot123.github.io/posts/2da5073.html"/>
     <id>https://arobot123.github.io/posts/2da5073.html</id>
     <published>2021-04-23T05:18:49.000Z</published>
-    <updated>2021-04-23T06:25:42.639Z</updated>
+    <updated>2021-04-23T06:25:58.727Z</updated>
     
     
       

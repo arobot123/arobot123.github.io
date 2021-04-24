@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="小bug清理机, linux robot">
+    <meta name="keywords" content="linux-boot-theme, linux robot">
     <meta name="description" content="linux|robot">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>小bug清理机 | 蓝笔头</title>
+    <title>linux-boot-theme | 蓝笔头</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/arobot123/arobot123.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/arobot123/arobot123.github.io/libs/awesome/css/all.css">
@@ -248,12 +248,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/arobot123/arobot123.github.io/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/arobot123/arobot123.github.io/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">小bug清理机</h1>
+                    <h1 class="description center-align post-title">linux-boot-theme</h1>
                 </div>
             </div>
         </div>
@@ -369,8 +369,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/bug-fix/">
-                                <span class="chip bg-color">bug-fix</span>
+                            <a href="/tags/boot/">
+                                <span class="chip bg-color">boot</span>
+                            </a>
+                        
+                            <a href="/tags/theme/">
+                                <span class="chip bg-color">theme</span>
                             </a>
                         
                     </div>
@@ -381,8 +385,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/IDE/" class="post-category">
-                                IDE
+                            <a href="/categories/linux/" class="post-category">
+                                linux
                             </a>
                         
                     </div>
@@ -394,28 +398,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-22
+                    2021-04-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-23
+                    2021-04-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    564
+                    876
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -437,59 +441,61 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="sudo-dnf-update-报错：-Zchunk-error-Unable-to-find-multipart-download-range"><a href="#sudo-dnf-update-报错：-Zchunk-error-Unable-to-find-multipart-download-range" class="headerlink" title="sudo dnf update 报错： Zchunk error: Unable to find multipart download range"></a>sudo dnf update 报错： Zchunk error: Unable to find multipart download range</h2><pre class="line-numbers language-text" data-language="text"><code class="language-text">% sudo dnf update -y
-Fedora 33 - x86_64 - Updates                                                                             15 kB/s |  18 kB     00:01    
-Fedora 33 - x86_64 - Updates                                                                            291 kB/s | 655 kB     00:02    
-Errors during downloading metadata for repository 'updates':
-  - Curl error (52): Server returned nothing (no headers, no data) for http://mirror.sjtu.edu.cn/fedora/linux/updates/33/Everything/x86_64/repodata/91f0b8484161b556ee67d9fa6512cd0f4f2bae6e173aa353e6cc69a782a50b0b-primary.xml.zck [Empty reply from server]
-  - Curl error (52): Server returned nothing (no headers, no data) for http://mirror.sjtu.edu.cn/fedora/linux/updates/33/Everything/x86_64/repodata/a3f0c8c48033b015034080a03ecbe1797e6a2630f0921499449f6e4367f11a7b-filelists.xml.zck [Empty reply from server]
-  - Zchunk error: Unable to find multipart download range
-
-错误：Failed to download metadata for repo 'updates': Yum repo downloading error: Downloading error: Unable to initialize zchunk file repodata/91f0b8484161b556ee67d9fa6512cd0f4f2bae6e173aa353e6cc69a782a50b0b-primary.xml.zck: Unable to set zchunk file descriptor for repodata/91f0b8484161b556ee67d9fa6512cd0f4f2bae6e173aa353e6cc69a782a50b0b-primary.xml.zck: Unable to find multipart download range<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>处理：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">Temporary solution:
-1. Set zchunk to False in dnf.conf
-~]# echo 'zchunk=False' &gt;&gt; /etc/dnf/dnf.conf
-2. Restart packagekit
-~]# systemctl restart packagekit.service
-3. Run again "pkcon refresh force"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="手误删除login-shell如何恢复"><a href="#手误删除login-shell如何恢复" class="headerlink" title="手误删除login shell如何恢复"></a>手误删除login shell如何恢复</h2><p>/etc/passwd 指定为zsh，但zsh被删除后没有chsh，退出后无法登录报permission denied</p>
-<p>处理：</p>
-<p>方案1：修改启动参数</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">1. 开机进入grub选单，按e进入编辑
-
-    linux /vmlinuz root=/dev/mapper/vg_centos-lv-root ro nomodoset quiet
-crashkernel=auto rd.lvm.lv=vg_centos/lv_root console=ttyS0,115200n8 LANG=en_US.UTF-8
-    initrd /initramfs
-
-2. 找到linux开头这行 ro quiet console=xxx 并删除
-3. 这行后加入 rw init=/bin/bash
-4. 按ctrl+x启动系统
-5. 启动后进入bash且根目录已经正常挂载，使用passwd修改root密码，chsh修改默认shell
-6. 执行 exec /sbin/init 进入正常启动流程<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>方案2：挂载iso启动</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">1. 下载ubuntu iso镜像（可启动iso镜像即可），挂载并从iso启动
-2. 试用系统，非安装系统，确认进入
-3. 进入后挂载/etc/passwd对应分区
-4. 修改配置保存
-5. 从硬盘重启<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>方案3：Live USB启动</p>
-<p>类似iso启动，进入USB系统操作。</p>
-<h2 id="df-run-user-1000-doc-不允许的操作"><a href="#df-run-user-1000-doc-不允许的操作" class="headerlink" title="df: /run/user/1000/doc: 不允许的操作"></a>df: /run/user/1000/doc: 不允许的操作</h2><p><a target="_blank" rel="noopener" href="https://bugzilla.redhat.com/show_bug.cgi?id=1913358#">https://bugzilla.redhat.com/show_bug.cgi?id=1913358#</a></p>
-<h2 id="git-push-出现-Empty-reply-from-server"><a href="#git-push-出现-Empty-reply-from-server" class="headerlink" title="git push 出现 Empty reply from server"></a>git push 出现 Empty reply from server</h2><pre class="line-numbers language-text" data-language="text"><code class="language-text">% git push
-fatal: 无法访问 'https://github.com/arobot123/zilean/'：Empty reply from server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>墙内墙外http,https通道不仅速度慢，也都有失败风险的。访问不到就返回空了。通道换成git</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">vim .git/config
-将 url 从http/https 替换成git
-具体链接可以从仓库复制过来，我这里是
-url = https://github.com/arobot123/zilean
-=&gt;
-url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <p>pc启动的时候搞了个grub2-theme，发现有时候能显示，有时候又不行，决定看看是啥原因。</p>
+<h2 id="启动方式"><a href="#启动方式" class="headerlink" title="启动方式"></a>启动方式</h2><p>一般说的是硬盘启动、U盘启动、PXE网络启动、光盘启动、软盘启动。所以区别在启动介质的区别。<br>本地PC一般硬盘/U盘启动，现在笔记本光驱基本上都淘汰了，软盘也淘汰了，PXE一般局域网用来批量装机。</p>
+<h2 id="如何设置启动方式"><a href="#如何设置启动方式" class="headerlink" title="如何设置启动方式"></a>如何设置启动方式</h2><p>开机进BIOS设置启动方式，怎么进BIOS及具体在哪里设置，按自己的品牌网上搜索教程即可。<br>一般ESC（laptop）/DEL（台式/服务器）可以进入BIOS setup。</p>
+<h2 id="引导方式"><a href="#引导方式" class="headerlink" title="引导方式"></a>引导方式</h2><p>或者说叫引导模式。传统的是Legacy引导，现在流行UEFI引导。</p>
+<p>Legacy兼容性好，支持32/64bits系统，但比较老旧，支持MBR格式硬盘引导。</p>
+<ul>
+<li>主分区&lt;=4个</li>
+<li>硬盘&lt;=2TB</li>
+<li>不支持安全启动</li>
+<li>各厂商接口不一致，配置都比较麻烦</li>
+</ul>
+<p>UEFI目前主流模式，性能更好，安全性更好。支持GPT格式硬盘（GUID分区表）引导。</p>
+<ul>
+<li>主分区&lt;=128个</li>
+<li>硬盘&lt;=18*1024TB</li>
+<li>支持安全启动（防止病毒在引导时加载）</li>
+<li>开机没有自检，速度更快</li>
+<li>图形化界面交互性更强</li>
+</ul>
+<p>过渡阶段，支持Legacy+UEFI模式，自动根据硬件选择引导模式。后续主流就是UEFI 64bits系统引导。</p>
+<h2 id="如何设置引导方式"><a href="#如何设置引导方式" class="headerlink" title="如何设置引导方式"></a>如何设置引导方式</h2><p>BIOS设置。这里说明相关几个设置项作用，根据实际需要的引导模式(boot mode)，然后找到对应的设置项进行设置。</p>
+<ul>
+<li>CSM(Compatibility support Module) 兼容模块。 Legacy模式打开，否则关闭。</li>
+<li>Secure Boot Control 安全启动控制设置。 Legacy模式关闭，否则打开。</li>
+<li>Boot Mode 启动模式。切换Legacy或UEFI。</li>
+<li>OS Optimized Defaults 系统默认优化设置。Windows涉及，且Legacy启动时关闭。</li>
+</ul>
+<h2 id="Linux系统启动过程"><a href="#Linux系统启动过程" class="headerlink" title="Linux系统启动过程"></a>Linux系统启动过程</h2><h3 id="Step1-BIOS自检（POST-RunTime）"><a href="#Step1-BIOS自检（POST-RunTime）" class="headerlink" title="Step1 BIOS自检（POST + RunTime）"></a>Step1 BIOS自检（POST + RunTime）</h3><p>检查硬件环境，加载硬件驱动。并将启动引导管理权移交到下一个阶段。</p>
+<p>BIOS，存储于CMOS ROM（只读存储器）内的微型操作系统。基本作用:</p>
+<ul>
+<li>POST 对服务器硬件环境进行基本检查</li>
+<li>RunTime 用户操作系统的启动</li>
+<li>为键盘、视频设备、串口初始化核心设备驱动并分配资源</li>
+<li>选择合适的引导设备（硬盘、U盘、CD-ROM、PXE等）</li>
+<li>将磁盘第1个512Bytes扇区装入内存并传递引导权到该区域</li>
+</ul>
+<p>任何引导盘第1个512字节都包含一个可执行文件，也即引导程序（Legacy =&gt; UEFI）。</p>
+<h3 id="Step2-启动引导管理器引导阶段"><a href="#Step2-启动引导管理器引导阶段" class="headerlink" title="Step2 启动引导管理器引导阶段"></a>Step2 启动引导管理器引导阶段</h3><p>加载系统启动引导管理器，并运行。  </p>
+<p>访问磁盘第1个扇区，称之为主引导记录（MBR），加载启动引导管理程序（GRUB，LiLo等）。  </p>
+<p>也即GRUB（部分）程序在第一个扇区，被加载到内存中执行后，就能看到引导菜单界面。  </p>
+<p>MBR 第1个扇区512Bytes构成：</p>
+<ul>
+<li>前446字节 程序数据</li>
+<li>后64字节  分区表</li>
+<li>后2字节   签名信息</li>
+</ul>
+<p>GRUB基本组成作用：</p>
+<h3 id="Step3-内核与镜像文件系统加载"><a href="#Step3-内核与镜像文件系统加载" class="headerlink" title="Step3 内核与镜像文件系统加载"></a>Step3 内核与镜像文件系统加载</h3><p>加载基本的设备驱动，识别根等文件系统，并挂载</p>
+<h3 id="Step4-系统初始化及服务加载"><a href="#Step4-系统初始化及服务加载" class="headerlink" title="Step4 系统初始化及服务加载"></a>Step4 系统初始化及服务加载</h3><ul>
+<li>启动1号进程 init</li>
+<li>执行系统初始化</li>
+<li>进入指定的运行级别或模式</li>
+<li>启动相关服务</li>
+<li>开启中端</li>
+</ul>
 
                 
             </div>
@@ -516,7 +522,7 @@ url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-nu
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://arobot123.github.io/posts/e03e6612.html">https://arobot123.github.io/posts/e03e6612.html</a>
+                    <a href="https://arobot123.github.io/posts/6406bd98.html">https://arobot123.github.io/posts/6406bd98.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,8 +560,12 @@ url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-nu
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/bug-fix/">
-                                    <span class="chip bg-color">bug-fix</span>
+                                <a href="/tags/boot/">
+                                    <span class="chip bg-color">boot</span>
+                                </a>
+                            
+                                <a href="/tags/theme/">
+                                    <span class="chip bg-color">theme</span>
                                 </a>
                             
                         </div>
@@ -993,17 +1003,18 @@ url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-nu
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/573d126a.html">
+                <a href="/posts/6406bd98.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/arobot123/arobot123.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="小工具采集器">
+                        <img src="https://cdn.jsdelivr.net/gh/arobot123/arobot123.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="linux-boot-theme">
                         
-                        <span class="card-title">小工具采集器</span>
+                        <span class="card-title">linux-boot-theme</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1013,26 +1024,31 @@ url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-nu
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/tools/" class="post-category">
-                                    tools
+                            <a href="/categories/linux/" class="post-category">
+                                    linux
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/small-tools/">
-                        <span class="chip bg-color">small-tools</span>
+                    <a href="/tags/boot/">
+                        <span class="chip bg-color">boot</span>
+                    </a>
+                    
+                    <a href="/tags/theme/">
+                        <span class="chip bg-color">theme</span>
                     </a>
                     
                 </div>
@@ -1046,13 +1062,13 @@ url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-nu
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/ae504e32.html">
+                <a href="/posts/2da5073.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/arobot123/arobot123.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="快速搭建Qemu虚拟机(二)">
+                        <img src="https://cdn.jsdelivr.net/gh/arobot123/arobot123.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="linux网络安全配置">
                         
-                        <span class="card-title">快速搭建Qemu虚拟机(二)</span>
+                        <span class="card-title">linux网络安全配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1063,7 +1079,7 @@ url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-nu
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-23
                             </span>
                         <span class="publish-author">
                             
@@ -1073,10 +1089,6 @@ url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-nu
                                     linux
                                 </a>
                             
-                            <a href="/categories/linux/IDE/" class="post-category">
-                                    IDE
-                                </a>
-                            
                             
                         </span>
                     </div>
@@ -1084,8 +1096,8 @@ url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-nu
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/qemu-kvm/">
-                        <span class="chip bg-color">qemu-kvm</span>
+                    <a href="/tags/security/">
+                        <span class="chip bg-color">security</span>
                     </a>
                     
                 </div>

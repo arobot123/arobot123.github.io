@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://arobot123.github.io/posts/6406bd98.html</loc>
+    
+    <lastmod>2021-04-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://arobot123.github.io/posts/2da5073.html</loc>
     
     <lastmod>2021-04-23</lastmod>
@@ -123,7 +130,7 @@
 
   <url>
     <loc>https://arobot123.github.io/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -131,63 +138,77 @@
   
   <url>
     <loc>https://arobot123.github.io/tags/archlinux/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://arobot123.github.io/tags/x-display/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://arobot123.github.io/tags/image-bed/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://arobot123.github.io/tags/bug-fix/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://arobot123.github.io/tags/linux-tools/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <loc>https://arobot123.github.io/tags/boot/</loc>
+    <lastmod>2021-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://arobot123.github.io/tags/theme/</loc>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://arobot123.github.io/tags/security/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://arobot123.github.io/tags/linux-tools/</loc>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://arobot123.github.io/tags/personal-computer/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://arobot123.github.io/tags/qemu-kvm/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://arobot123.github.io/tags/small-tools/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -196,28 +217,28 @@
   
   <url>
     <loc>https://arobot123.github.io/categories/linux/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://arobot123.github.io/categories/IDE/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://arobot123.github.io/categories/linux/IDE/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://arobot123.github.io/categories/tools/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <lastmod>2021-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
