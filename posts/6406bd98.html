@@ -420,14 +420,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -450,6 +450,24 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>pc启动的时候搞了个grub2-theme，发现有时候能显示，有时候又不行，决定看看是啥原因。</p>
+<p>解决方法：</p>
+<p>修改/etc/default/grub：</p>
+<ul>
+<li>GRUB_DISABLE_SUBMENU=false</li>
+<li>GRUB_CMDLINE_LINUX 删除 rghb quiet 参数。使用信息全部打印有助于发现系统Bug。</li>
+</ul>
+<p>参考配置</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text"># cat /etc/default/grub
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=false
+GRUB_CMDLINE_LINUX="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1 resume=/dev/mapper/os-swap rd.lvm.lv=os/root rd.lvm.lv=os/swap rd.lvm.lv=os/usr rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1"
+GRUB_DISABLE_RECOVERY="true"
+GRUB_ENABLE_BLSCFG=false
+GRUB_BACKGROUND=/boot/grub2/themes/system/background.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>后来我发现fedora33做了优化，菜单只有第1次启动或者上次启动失败的才会显示，类似widnows的体验。相关代码在/etc/grub.d/。<br>也就放弃了挣扎，自定义grub2主题也删除了。。。而且背景图好像也没有正常显示。启动还是会直接登入系统。</p>
 <h2 id="启动方式"><a href="#启动方式" class="headerlink" title="启动方式"></a>启动方式</h2><p>一般说的是硬盘启动、U盘启动、PXE网络启动、光盘启动、软盘启动。所以区别在启动介质的区别。<br>本地PC一般硬盘/U盘启动，现在笔记本光驱基本上都淘汰了，软盘也淘汰了，PXE一般局域网用来批量装机。</p>
 <h2 id="如何设置启动方式"><a href="#如何设置启动方式" class="headerlink" title="如何设置启动方式"></a>如何设置启动方式</h2><p>开机进BIOS设置启动方式，怎么进BIOS及具体在哪里设置，按自己的品牌网上搜索教程即可。<br>一般ESC（laptop）/DEL（台式/服务器）可以进入BIOS setup。</p>
 <h2 id="引导方式"><a href="#引导方式" class="headerlink" title="引导方式"></a>引导方式</h2><p>或者说叫引导模式。传统的是Legacy引导，现在流行UEFI引导。</p>
@@ -533,6 +551,15 @@
 <li><code>c</code> 引导菜单进grub shell。</li>
 <li><code>ctrl x</code> 按当前修改配置启动</li>
 </ul>
+<h4 id="规范操作"><a href="#规范操作" class="headerlink" title="规范操作"></a>规范操作</h4><ol>
+<li>修改/etc/default/grub</li>
+<li>grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg</li>
+</ol>
+<p>无EFI分区，使用 grub2-mkconfig -o /boot/grub2/grub.cfg</p>
+<ol start="3">
+<li>reboot</li>
+</ol>
+<p>后续内容再单独补充。</p>
 <h3 id="Step3-内核与镜像文件系统加载"><a href="#Step3-内核与镜像文件系统加载" class="headerlink" title="Step3 内核与镜像文件系统加载"></a>Step3 内核与镜像文件系统加载</h3><p>加载基本的设备驱动，识别根等文件系统，并挂载</p>
 <h3 id="Step4-系统初始化及服务加载"><a href="#Step4-系统初始化及服务加载" class="headerlink" title="Step4 系统初始化及服务加载"></a>Step4 系统初始化及服务加载</h3><ul>
 <li>启动1号进程 init</li>
@@ -1346,7 +1373,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.7k</span>&nbsp;字
+                class="white-color">7k</span>&nbsp;字
             
 
             

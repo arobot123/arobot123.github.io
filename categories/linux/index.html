@@ -376,7 +376,11 @@
                         <div class="summary block-with-text">
                             
                                 pc启动的时候搞了个grub2-theme，发现有时候能显示，有时候又不行，决定看看是啥原因。
-启动方式一般说的是硬盘启动、U盘启动、PXE网络启动、光盘启动、软盘启动。所以区别在启动介质的区别。本地PC一般硬盘/U盘启动，现在笔记本光驱基
+解决方法：
+修改/etc/default/grub：
+
+GRUB_DISABLE_SUBMENU=false
+GRUB_CMDLINE_LINU
                             
                         </div>
                         <div class="publish-info">
@@ -746,7 +750,7 @@ U盘挂载到主机，在虚拟机内部进行读写
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.7k</span>&nbsp;字
+                class="white-color">7k</span>&nbsp;字
             
 
             

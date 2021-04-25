@@ -408,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    721
+                    785
                 </div>
                 
 
@@ -503,8 +503,8 @@ url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-nu
 fi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>grub2貌似缺少中文的模块，使用英文en_US试试。确实不报错了。如果一定要使用中文（每次生成都是中文），再看看怎么解决。<br>找到相似的问题单:  <a target="_blank" rel="noopener" href="https://bugzilla.redhat.com/show_bug.cgi?id=817187">https://bugzilla.redhat.com/show_bug.cgi?id=817187</a></p>
-<h2 id="系统启动过程中报错：-Loading-of-unsigned-module-is-rejected"><a href="#系统启动过程中报错：-Loading-of-unsigned-module-is-rejected" class="headerlink" title="系统启动过程中报错： Loading of unsigned module is rejected"></a>系统启动过程中报错： Loading of unsigned module is rejected</h2><p>未签名模块加载失败。</p>
-<p>未找到解决方法。</p>
+<h2 id="系统启动过程中报错：-Loading-of-unsigned-module-is-rejected"><a href="#系统启动过程中报错：-Loading-of-unsigned-module-is-rejected" class="headerlink" title="系统启动过程中报错： Loading of unsigned module is rejected"></a>系统启动过程中报错： Loading of unsigned module is rejected</h2><p>未签名模块加载失败。猜测应该是我的nvida驱动模块加载失败了，开启安全启动了。没有签名的模块会加载失败。<br><code>lsmod | grep -iE nvida</code> 确实没有。还是关闭安全启动，毕竟个人PC，也不会暴露再公网。</p>
+<p>重启验证通过。</p>
 
                 
             </div>
@@ -1288,7 +1288,7 @@ fi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.7k</span>&nbsp;字
+                class="white-color">7k</span>&nbsp;字
             
 
             
