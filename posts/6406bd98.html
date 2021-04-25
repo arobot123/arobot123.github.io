@@ -373,6 +373,14 @@
                                 <span class="chip bg-color">boot</span>
                             </a>
                         
+                            <a href="/tags/grub/">
+                                <span class="chip bg-color">grub</span>
+                            </a>
+                        
+                            <a href="/tags/grub2/">
+                                <span class="chip bg-color">grub2</span>
+                            </a>
+                        
                             <a href="/tags/theme/">
                                 <span class="chip bg-color">theme</span>
                             </a>
@@ -405,21 +413,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-24
+                    2021-04-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    876
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -487,7 +495,46 @@
 <li>后64字节  分区表</li>
 <li>后2字节   签名信息</li>
 </ul>
-<p>GRUB基本组成作用：</p>
+<h4 id="GRUB基本组成作用"><a href="#GRUB基本组成作用" class="headerlink" title="GRUB基本组成作用"></a>GRUB基本组成作用</h4><ul>
+<li>stage1 装载磁盘0磁道0柱面2扇区到内存中并执行。</li>
+<li>start.S 位于0磁道0柱面2扇区，读取磁盘后续3扇区到N扇区位置到内存（N取决于文件系统支撑代码大小），是stage1.5或者stage2的入口。<br>若加载stage1.5，则通过文件系统跳转到stage2；反之，则通过硬件（INIT 13中断）跳转方式访问stage2。</li>
+<li>stage1.5 使grub能够识别文件系统。支持通过文件系统访问stage2,<br>是stage1与stage2桥梁。</li>
+<li>stage2 提供grub所有功能，包括启动菜单、grub shell交互等。</li>
+</ul>
+<h4 id="GRUB的配置文件"><a href="#GRUB的配置文件" class="headerlink" title="GRUB的配置文件"></a>GRUB的配置文件</h4><ul>
+<li>/boot/grub/grub.conf</li>
+<li>/boot/grub2/grub.cfg</li>
+</ul>
+<p>配置文件作用：</p>
+<ul>
+<li>定义启动分区、内核与镜像文件系统位置</li>
+<li>定义多系统启动引导参数</li>
+</ul>
+<h4 id="GRUB、GRUB2的区别："><a href="#GRUB、GRUB2的区别：" class="headerlink" title="GRUB、GRUB2的区别："></a>GRUB、GRUB2的区别：</h4><pre class="line-numbers language-text" data-language="text"><code class="language-text">待补充。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>当系统正常加载完GRUB后（看到启动菜单或看到GRUB shell后），下一步启动需要依靠GRUB中指定的配置信息。</p>
+<h4 id="GRUB-GRUB2的核心配置信息"><a href="#GRUB-GRUB2的核心配置信息" class="headerlink" title="GRUB/GRUB2的核心配置信息"></a>GRUB/GRUB2的核心配置信息</h4><ol>
+<li>内核与镜像文件系统所在位置，即启动分区（通常是/boot）</li>
+</ol>
+<pre class="line-numbers language-grub" data-language="grub"><code class="language-grub">root (hd0,0) # 第1块硬盘第1个分区<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="2">
+<li>内核文件信息：名称（vmlinuz）、位置、根分区位置、根分区挂载方式、其他启动选项</li>
+</ol>
+<pre class="line-numbers language-grub" data-language="grub"><code class="language-grub">kernel /vmlinuz ro root=/dev/mapper/os-root<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这里只能ro。启动时会自动使用fsck对根文件系统进行检查，前提就是只读。通过后会使用rw重新挂载。</p>
+<ol start="3">
+<li>镜像文件系统信息：名称和位置（initrd, initramfs 微型操作系统的根，封装在单独的文件中，使系统获取识别文件系统、磁盘、设备的能力）</li>
+</ol>
+<pre class="line-numbers language-grub" data-language="grub"><code class="language-grub">initrd /initramfs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>boot</code>后启动，进入OS。</p>
+<p>具体命令grub/grub2有差别。</p>
+<h4 id="GRUB-Shell"><a href="#GRUB-Shell" class="headerlink" title="GRUB Shell"></a>GRUB Shell</h4><p>能够编辑对应的GRUB的配置信息，进行启动。</p>
+<ul>
+<li><code>c</code> 引导菜单进grub shell。</li>
+<li><code>ctrl x</code> 按当前修改配置启动</li>
+</ul>
 <h3 id="Step3-内核与镜像文件系统加载"><a href="#Step3-内核与镜像文件系统加载" class="headerlink" title="Step3 内核与镜像文件系统加载"></a>Step3 内核与镜像文件系统加载</h3><p>加载基本的设备驱动，识别根等文件系统，并挂载</p>
 <h3 id="Step4-系统初始化及服务加载"><a href="#Step4-系统初始化及服务加载" class="headerlink" title="Step4 系统初始化及服务加载"></a>Step4 系统初始化及服务加载</h3><ul>
 <li>启动1号进程 init</li>
@@ -562,6 +609,14 @@
                             
                                 <a href="/tags/boot/">
                                     <span class="chip bg-color">boot</span>
+                                </a>
+                            
+                                <a href="/tags/grub/">
+                                    <span class="chip bg-color">grub</span>
+                                </a>
+                            
+                                <a href="/tags/grub2/">
+                                    <span class="chip bg-color">grub2</span>
                                 </a>
                             
                                 <a href="/tags/theme/">
@@ -1047,6 +1102,14 @@
                         <span class="chip bg-color">boot</span>
                     </a>
                     
+                    <a href="/tags/grub/">
+                        <span class="chip bg-color">grub</span>
+                    </a>
+                    
+                    <a href="/tags/grub2/">
+                        <span class="chip bg-color">grub2</span>
+                    </a>
+                    
                     <a href="/tags/theme/">
                         <span class="chip bg-color">theme</span>
                     </a>
@@ -1285,7 +1348,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6k</span>&nbsp;字
+                class="white-color">6.5k</span>&nbsp;字
             
 
             
