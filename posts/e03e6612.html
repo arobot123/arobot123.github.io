@@ -401,21 +401,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-23
+                    2021-04-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    564
+                    721
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -490,6 +490,21 @@ fatal: 无法访问 'https://github.com/arobot123/zilean/'：Empty reply from se
 url = https://github.com/arobot123/zilean
 =&gt;
 url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="grub2-启动中报错：file-EFI-fedora-locale-zh-gmo-not-found"><a href="#grub2-启动中报错：file-EFI-fedora-locale-zh-gmo-not-found" class="headerlink" title="grub2 启动中报错：file /EFI/fedora/locale/zh.gmo not found"></a>grub2 启动中报错：file /EFI/fedora/locale/zh.gmo not found</h2><p>grub2 引导界面还没有出，应该是grub2加载出现问题。但是不影响使用。</p>
+<p>相关代码:</p>
+<pre class="line-numbers language-none"><code class="language-none">if loadfont $font ; then
+  set gfxmode=auto
+  load_video
+  insmod gfxterm
+  set locale_dir=$prefix/locale
+  set lang=zh_CN
+  insmod gettext
+fi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>grub2貌似缺少中文的模块，使用英文en_US试试。确实不报错了。如果一定要使用中文（每次生成都是中文），再看看怎么解决。<br>找到相似的问题单:  <a target="_blank" rel="noopener" href="https://bugzilla.redhat.com/show_bug.cgi?id=817187">https://bugzilla.redhat.com/show_bug.cgi?id=817187</a></p>
+<h2 id="系统启动过程中报错：-Loading-of-unsigned-module-is-rejected"><a href="#系统启动过程中报错：-Loading-of-unsigned-module-is-rejected" class="headerlink" title="系统启动过程中报错： Loading of unsigned module is rejected"></a>系统启动过程中报错： Loading of unsigned module is rejected</h2><p>未签名模块加载失败。</p>
+<p>未找到解决方法。</p>
 
                 
             </div>
@@ -1273,7 +1288,7 @@ url = git@github.com:arobot123/zilean.git<span aria-hidden="true" class="line-nu
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.5k</span>&nbsp;字
+                class="white-color">6.7k</span>&nbsp;字
             
 
             
