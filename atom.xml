@@ -6,7 +6,7 @@
   <link href="https://arobot123.github.io/atom.xml" rel="self"/>
   
   <link href="https://arobot123.github.io/"/>
-  <updated>2021-04-25T13:19:16.792Z</updated>
+  <updated>2021-04-29T04:57:21.877Z</updated>
   <id>https://arobot123.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pxe-boot</title>
+    <link href="https://arobot123.github.io/posts/1034d431.html"/>
+    <id>https://arobot123.github.io/posts/1034d431.html</id>
+    <published>2021-04-29T04:56:37.000Z</published>
+    <updated>2021-04-29T04:57:21.877Z</updated>
+    
+    
+    
+    
+    <category term="pxe" scheme="https://arobot123.github.io/categories/pxe/"/>
+    
+    
+    <category term="tftp" scheme="https://arobot123.github.io/tags/tftp/"/>
+    
+    <category term="dhcp" scheme="https://arobot123.github.io/tags/dhcp/"/>
+    
+    <category term="http" scheme="https://arobot123.github.io/tags/http/"/>
+    
+  </entry>
   
   <entry>
     <title>linux-boot-theme</title>
@@ -83,7 +104,7 @@
     <link href="https://arobot123.github.io/posts/573d126a.html"/>
     <id>https://arobot123.github.io/posts/573d126a.html</id>
     <published>2021-04-22T01:33:10.000Z</published>
-    <updated>2021-04-23T02:51:31.982Z</updated>
+    <updated>2021-04-29T15:05:14.512Z</updated>
     
     
       
